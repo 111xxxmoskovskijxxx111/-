@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Опросник</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f8ff;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .answer {
+            color: green;
+            margin-top: 10px;
+            font-weight: bold;
+            display: none;
+        }
+        button {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Опросник</h1>
+
+<div class="question">
+    <p><strong>1. Какой ваш любимый цвет?</strong></p>
+    <button onclick="showAnswer('answer1a')">Синий</button>
+    <button onclick="showAnswer('answer1b')">Красный</button>
+    <button onclick="showAnswer('answer1c')">Зелёный</button>
+    <div id="answer1a" class="answer">Синий — цвет спокойствия и неба!</div>
+    <div id="answer1b" class="answer">Красный — цвет энергии и страсти!</div>
+    <div id="answer1c" class="answer">Зелёный — цвет природы и гармонии!</div>
+</div>
+
+<div class="question">
+    <p><strong>2. Какое время года вам нравится больше всего?</strong></p>
+    <button onclick="showAnswer('answer2a')">Лето</button>
+    <button onclick="showAnswer('answer2b')">Зима</button>
+    <button onclick="showAnswer('answer2c')">Осень</button>
+    <div id="answer2a" class="answer">Лето — жара, солнце и отдых на природе!</div>
+    <div id="answer2b" class="answer">Зима — время чудес и снега!</div>
+    <div id="answer2c" class="answer">Осень — красивые листья и уют!</div>
+</div>
+
+<div class="question">
+    <p><strong>3. Любите ли вы путешествовать?</strong></p>
+    <button onclick="showAnswer('answer3a')">Да</button>
+    <button onclick="showAnswer('answer3b')">Нет</button>
+    <div id="answer3a" class="answer">Отлично! Путешествия расширяют горизонты!</div>
+    <div id="answer3b" class="answer">Ничего страшного, уют дома — тоже прекрасно!</div>
+</div>
+
+<script>
+function showAnswer(id) {
+    // Скрыть все ответы в этом вопросе
+    const allAnswers = document.getElementById(id).parentNode.querySelectorAll('.answer');
+    allAnswers.forEach(ans => ans.style.display = 'none');
+    // Показать только выбранный ответ
+    document.getElementById(id).style.display = 'block';
+}
+</script>
+
+</body>
+</html>
